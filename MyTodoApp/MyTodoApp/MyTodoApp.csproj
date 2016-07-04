@@ -38,10 +38,29 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Core\Interfaces\IRepository.cs" />
+    <Compile Include="Core\Interfaces\IService.cs" />
+    <Compile Include="Core\Interfaces\IView.cs" />
+    <Compile Include="Core\Interfaces\IViewModel.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\TodoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ITodoItemRepository.cs" />
+    <Compile Include="Repositories\TodoItemRepository.cs" />
+    <Compile Include="Services\ITodoItemService.cs" />
+    <Compile Include="Services\TodoItemService.cs" />
+    <Compile Include="ViewModels\ITodoItemDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ITodoItemListViewModel.cs" />
+    <Compile Include="ViewModels\TodoItemDetailsViewModel.cs" />
+    <Compile Include="ViewModels\TodoItemListViewModel.cs" />
+    <Compile Include="Views\TodoItemDetailsView.xaml.cs">
+      <DependentUpon>TodoItemDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TodoItemListView.xaml.cs">
+      <DependentUpon>TodoItemListView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -70,6 +89,19 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.0.107\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TodoItemListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TodoItemDetailsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.0.107\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.0.107\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
