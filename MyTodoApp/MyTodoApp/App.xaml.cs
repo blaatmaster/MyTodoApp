@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
-using Autofac;
+﻿using Autofac;
+using MyTodoApp.Core.Extensions.Dialogs;
+using MyTodoApp.Core.Extensions.Navigation;
+using MyTodoApp.Core.Factories;
 using MyTodoApp.Repositories;
 using MyTodoApp.Services;
 using MyTodoApp.ViewModels;
 using MyTodoApp.Views;
-using MyTodoApp.Core.Factories;
-using MyTodoApp.Core.Extensions.Navigation;
-using MyTodoApp.Core.Extensions.Dialogs;
+using Xamarin.Forms;
 
 namespace MyTodoApp
 {
@@ -19,11 +14,11 @@ namespace MyTodoApp
     {
         public const string PageTodoItemList = "TodoItemList";
         public const string PageTodoItemDetails = "TodoItemDetails";
-        
+
         private IContainer _container;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public App()
         {
@@ -33,17 +28,15 @@ namespace MyTodoApp
             Configure();
         }
 
-
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected void Configure()
         {
             ContainerBuilder cb = new ContainerBuilder();
 
             /// INFRASTRUCTURE
-            /// 
+            ///
 
             // ViewFactory
             cb.RegisterType<ViewFactory>()
@@ -61,7 +54,7 @@ namespace MyTodoApp
                 .SingleInstance();
 
             /// APPLICATION SPECIFIC
-            /// 
+            ///
 
             // Repositories
             cb.RegisterType<TodoItemRepository>().As<ITodoItemRepository>().SingleInstance();
@@ -76,10 +69,9 @@ namespace MyTodoApp
             // Views
             cb.RegisterType<TodoItemListView>().SingleInstance();
             cb.RegisterType<TodoItemDetailsView>().SingleInstance();
-            
+
             // Build Container
             _container = cb.Build();
-
 
             // Map ViewModels => Views
             var viewFactory = _container.Resolve<IViewFactory>();
@@ -95,21 +87,16 @@ namespace MyTodoApp
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected void Execute()
         {
-            
         }
-
-
 
         /////////////
 
-
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected override void OnStart()
         {

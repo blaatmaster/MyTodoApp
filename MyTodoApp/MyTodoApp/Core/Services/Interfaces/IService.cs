@@ -1,5 +1,4 @@
-﻿
-namespace MyTodoApp.Core.Services.Interfaces
+﻿namespace MyTodoApp.Core.Services.Interfaces
 {
     interface IService
     {

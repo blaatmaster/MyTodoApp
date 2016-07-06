@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MyTodoApp.Core.Extensions.Dialogs
@@ -29,14 +26,14 @@ namespace MyTodoApp.Core.Extensions.Dialogs
             string title,
             string buttonText,
             Action afterHideCallback);
-        
+
         Task<bool> ShowMessage(
             string message,
             string title,
             string buttonConfirmText,
             string buttonCancelText,
             Action<bool> afterHideCallback);
-        
+
         Task ShowMessageBox(
             string message,
             string title);
