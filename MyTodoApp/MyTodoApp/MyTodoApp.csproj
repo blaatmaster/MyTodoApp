@@ -38,10 +38,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Core\Interfaces\IRepository.cs" />
-    <Compile Include="Core\Interfaces\IService.cs" />
-    <Compile Include="Core\Interfaces\IView.cs" />
-    <Compile Include="Core\Interfaces\IViewModel.cs" />
+    <Compile Include="Core\Extensions\Dialogs\DialogService.cs" />
+    <Compile Include="Core\Extensions\Navigation\NavigationService.cs" />
+    <Compile Include="Core\Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Core\Extensions\Dialogs\IDialogService.cs" />
+    <Compile Include="Core\Extensions\Navigation\INavigationService.cs" />
+    <Compile Include="Core\Services\Interfaces\IService.cs" />
+    <Compile Include="Core\Views\Interfaces\IView.cs" />
+    <Compile Include="Core\ViewModels\Interfaces\IViewModel.cs" />
+    <Compile Include="Core\Factories\IViewFactory.cs" />
+    <Compile Include="Core\Factories\ViewFactory.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -94,7 +100,10 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\Exceptions\" />
+    <Folder Include="Core\Models\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\TodoItemListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

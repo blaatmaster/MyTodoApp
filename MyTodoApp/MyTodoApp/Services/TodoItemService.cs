@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTodoApp.Services
 {
-    class TodoItemService
+    class TodoItemService : ITodoItemService
     {
     }
 }

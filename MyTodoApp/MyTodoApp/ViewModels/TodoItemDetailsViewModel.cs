@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTodoApp.ViewModels
 {
-    class TodoItemDetailsViewModel
+    class TodoItemDetailsViewModel : ITodoItemDetailsViewModel
     {
     }
 }

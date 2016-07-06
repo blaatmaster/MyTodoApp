@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTodoApp.Core.ViewModels.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyTodoApp.ViewModels
 {
-    interface ITodoItemDetailsViewModel
+    interface ITodoItemDetailsViewModel : IViewModel
     {
     }
 }

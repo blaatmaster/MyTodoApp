@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyTodoApp.Core.Interfaces
+namespace MyTodoApp.Core.ViewModels.Interfaces
 {
     interface IViewModel
     {

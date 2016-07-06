@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTodoApp.Repositories
 {
-    class TodoItemRepository
+    class TodoItemRepository : ITodoItemRepository
     {
     }
 }

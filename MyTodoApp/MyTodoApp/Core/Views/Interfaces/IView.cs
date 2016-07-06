@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyTodoApp.Core.Interfaces
+namespace MyTodoApp.Core.Views.Interfaces
 {
-    interface IService
+    interface IView
     {
     }
 }
