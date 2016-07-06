@@ -43,13 +43,15 @@ namespace MyTodoApp
                 .As<IViewFactory>()
                 .SingleInstance();
 
-            // NavigationService
-            cb.RegisterType<NavigationService>()
+            // NavigationService ==> TODO: Instance, because it should initialized further on. Navigation page is set. Possible other way?
+            NavigationService navigationService = new NavigationService();
+            cb.RegisterInstance(navigationService)
                 .As<INavigationService>()
                 .SingleInstance();
 
-            // DialogService
-            cb.RegisterType<DialogService>()
+            // DialogService ==> TODO: Instance, because it should initialized further on. Navigation page is set. Possible other way?
+            DialogService dialogService = new DialogService();
+            cb.RegisterInstance(dialogService)
                 .As<IDialogService>()
                 .SingleInstance();
 
@@ -79,9 +81,14 @@ namespace MyTodoApp
             viewFactory.Register<TodoItemListViewModel, TodoItemListView>();
             viewFactory.Register<TodoItemDetailsViewModel, TodoItemDetailsView>();
 
+            navigationService.Configure(App.PageTodoItemList, );
+
             // Set the main page...
             var mainPage = viewFactory.Resolve<TodoItemListViewModel>();
             var navigationPage = new NavigationPage(mainPage);
+
+            navigationService.Initialize(navigationPage);
+            dialogService.Initialize(navigationPage);
 
             MainPage = navigationPage;
         }
